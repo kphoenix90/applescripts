@@ -21,7 +21,7 @@ global xlsdata
 --you may customize these parameters to change the visual style of the Omnigraffle grid
 set cellWidth to 120 --size of cell width
 set cellHeight to 22 --size of cell height
-set cellFont to "BloombergProportionalUnicode" --cell font
+set cellFont to "Arial" --cell font
 set lineColor to {53466, 53465, 53466} -- color of the lines in the table
 set cellColor1 to {1, 1, 1} --- default background color of the table
 set textColor to {0, 0, 0} --default text color of the table 
