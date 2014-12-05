@@ -41,7 +41,7 @@ tell application "Microsoft Excel"
 	
 	--copy data from all selected cells and store in xlsdata
 	repeat with j from 1 to count large of selection
-		set xlsdata to xlsdata & (value of cell j of selection)
+		set xlsdata to xlsdata & (string value of cell j of selection)
 		log xlsdata
 	end repeat
 	set numCells to count large of selection
