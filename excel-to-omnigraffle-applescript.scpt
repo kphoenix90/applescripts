@@ -100,6 +100,7 @@ tell front window of application "OmniGraffle Professional 5"
 	tell application "System Events"
 		tell process "OmniGraffle Professional"
 			click menu item "Make Table" of menu "Arrange" of menu bar 1
+			--click menu item "Make Table" of menu 1 of menu bar item "Arrange" of menu bar 1 ---may need to try this line instead with more recent omni's 
 		end tell
 	end tell
 	
