@@ -1,5 +1,4 @@
--- by Kelsey L / github: kphoenix90 / 2013
--- only works for text cells
+-- by Kelsey L / github: kphoenix90 / 12.5.2014 update
 --**********************************************************************************************************************
 -- IMPORTING EXCEL DATA INTO AN OMNIGRAFFLE TABLE
 -- 1) Open both the Excel and Omnigraffle files.
