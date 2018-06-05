@@ -1,4 +1,5 @@
--- by Kelsey L / github: kphoenix90 / 12.5.2014 update
+-- by Kelsey L / github: kphoenix90 / 02.27.2018 update
+-- 02.27.2018 - In Excel 16.10, "count large" attribute has been removed. Logic has been rewritten accordingly
 --**********************************************************************************************************************
 -- IMPORTING EXCEL DATA INTO AN OMNIGRAFFLE TABLE
 -- 1) Open both the Excel and Omnigraffle files.
@@ -30,22 +31,29 @@ set cellColor2 to {57311, 57311, 57311} -- background color of every other row i
 
 --copy data from excel
 tell application "Microsoft Excel"
-  set xlsdata to {} --holder of excel data
+  	set xlsdata to {} --holder of excel data
+	set props to properties of selection
 	
 	---check if excel selection exists
-	if count large of selection is equal to missing value then
+	if selection is null or formula of selection is "" then
 		display dialog "You have not made a selection." & return & "Please select the cells you would like to import into Omnigraffle and try again."
 		return
 	end if
 	
+	set xlsRows to length of formula of props
+	set xlsCols to length of item 1 in formula of props
+	set numCells to xlsRows * xlsCols
+	
+	
+	set celldata to ""
+	
 	--copy data from all selected cells and store in xlsdata
-	repeat with j from 1 to count large of selection
-		set xlsdata to xlsdata & (string value of cell j of selection)
-		log xlsdata
+	repeat with j from 1 to numCells
+		set celldata to string value of cell j of selection
+		
+		set xlsdata to xlsdata & celldata
 	end repeat
-	set numCells to count large of selection
-	set xlsCols to count of columns of selection
-	set xlsRows to count of rows of selection
+	
 	log "end of excel copy"
 end tell
 
